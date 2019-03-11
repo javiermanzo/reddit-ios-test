@@ -52,4 +52,17 @@ class RTPostsListPresenter {
     func numberOfRows() -> Int {
         return self.posts.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(RTPostTableViewCell.self) else { return UITableViewCell() }
+        let post = self.posts[indexPath.row]
+        cell.setUpValues(post: post)
+        return cell
+    }
+    
+    func selectPost(_ indexPath: IndexPath) -> RTPost {
+        let post = self.posts[indexPath.row]
+        post.data.readed = true
+        return post
+    }
 }

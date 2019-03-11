@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol RTPostsListDelegate {
+    func postselected(_ post: RTPost)
+}
+
 class RTPostsListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
     lazy private var presenter = RTPostsListPresenter(delegate: self)
+    
+    var delegate: RTPostsListDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +63,14 @@ extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(RTPostTableViewCell.self) else { return UITableViewCell() }
-        return cell
+        return self.presenter.tableView(tableView, cellForRowAt: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let post = self.presenter.selectPost(indexPath)
+        tableView.reloadRows(at: [indexPath], with: .none)
+        self.delegate?.postselected(post)
     }
 }
 

@@ -18,12 +18,14 @@ class RTPostTableViewCell: UITableViewCell {
     @IBOutlet private var commentsLabel: UILabel!
     @IBOutlet private var dismissButton: UIButton!
     
+    var post: RTPost?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setUpView()
     }
     
-    func setUpView() {
+    private func setUpView() {
         self.backgroundColor = UIColor.style(.one)
         let disclosureView = UIImageView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
         disclosureView.contentMode = .scaleAspectFit
@@ -33,6 +35,15 @@ class RTPostTableViewCell: UITableViewCell {
         self.thumbImageView.roundCorners()
         
         self.readView.circleView()
+    }
+    
+    func setUpValues(post: RTPost) {
+        self.post = post
+        self.authorLabel.text = post.data.author
+        self.timeLabel.text = Date(timeIntervalSince1970: post.data.creationDateTimestamp).timeAgoSinceDate(numericDates: true)
+        self.titleLabel.text = post.data.title
+        self.commentsLabel.text = "\(post.data.numberOfComments) comments"
+        self.readView.isHidden = post.data.readed
     }
     
     @IBAction func dismissAction(_ sender: Any) {

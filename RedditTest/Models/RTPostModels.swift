@@ -27,7 +27,7 @@ struct RTPreview: Codable {
 class RTPostData: Codable {
     let id: String
     let title: String
-    let authorFullname: String
+    let author: String
     let numberOfComments: Int
     let creationDateTimestamp: Double
     let thumbImageUrl: String?
@@ -37,7 +37,7 @@ class RTPostData: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case authorFullname = "author_fullname"
+        case author
         case numberOfComments = "num_comments"
         case creationDateTimestamp = "created_utc"
         case thumbImageUrl = "thumbnail"
