@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BWp-Bf-Tc1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post-->
+        <scene sceneID="Yfo-6Y-qAN">
+            <objects>
+                <viewController storyboardIdentifier="RedditDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UzM-AU-yi9" customClass="RTDetailsViewController" customModule="RedditTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9a-v6-jqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="two"/>
+                        <viewLayoutGuide key="safeArea" id="84H-3m-SfZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="UXj-aQ-vVG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEV-a8-hE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="-382"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="URk-9m-0Pf">
+            <objects>
+                <navigationController id="J1C-8L-OZo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="RWy-kS-nXK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="one"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ypc-CT-I0m" kind="relationship" relationship="rootViewController" id="Q5d-Bm-LBA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFy-8K-Fer" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="-1072"/>
+        </scene>
+        <!--Posts List View Controller-->
+        <scene sceneID="tR8-61-QJW">
+            <objects>
+                <viewController id="ypc-CT-I0m" customClass="RTPostsListViewController" customModule="RedditTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVx-Gm-fWS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="one"/>
+                        <viewLayoutGuide key="safeArea" id="5a9-FS-Sbp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ecv-GK-JOJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1f-AT-H84" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="-1073"/>
+        </scene>
+        <!--Main Split View Controller-->
+        <scene sceneID="i7f-IZ-k3d">
+            <objects>
+                <splitViewController id="BWp-Bf-Tc1" customClass="RTMainSplitViewController" customModule="RedditTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="J1C-8L-OZo" kind="relationship" relationship="masterViewController" id="Msb-Wf-sJo"/>
+                        <segue destination="UzM-AU-yi9" kind="relationship" relationship="detailViewController" id="nyg-Ky-aTE"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20I-2J-5iG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="-740"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="one">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="two">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

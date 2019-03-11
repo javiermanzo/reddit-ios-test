@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RTPostsListViewController.swift
 //  RedditTest
 //
 //  Created by Javi on 11/03/2019.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RTPostsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
 }
-

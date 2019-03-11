@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		59982EF8223702E500E18550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982EF7223702E500E18550 /* AppDelegate.swift */; };
-		59982EFA223702E500E18550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982EF9223702E500E18550 /* ViewController.swift */; };
 		59982EFD223702E500E18550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59982EFB223702E500E18550 /* Main.storyboard */; };
-		59982EFF223702E800E18550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59982EFE223702E800E18550 /* Assets.xcassets */; };
+		59982EFF223702E800E18550 /* RTImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59982EFE223702E800E18550 /* RTImages.xcassets */; };
 		59982F02223702E800E18550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59982F00223702E800E18550 /* LaunchScreen.storyboard */; };
 		59982F0D223702E800E18550 /* RedditTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F0C223702E800E18550 /* RedditTestTests.swift */; };
 		59982F18223702E800E18550 /* RedditTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F17223702E800E18550 /* RedditTestUITests.swift */; };
+		59982F2E223704A200E18550 /* RTMainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F2D223704A200E18550 /* RTMainSplitViewController.swift */; };
+		59982F30223704D500E18550 /* RTPostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F2F223704D500E18550 /* RTPostsListViewController.swift */; };
+		59982F32223704E700E18550 /* RTDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F31223704E700E18550 /* RTDetailsViewController.swift */; };
+		59982F34223707BF00E18550 /* RTColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59982F33223707BF00E18550 /* RTColors.xcassets */; };
+		59982F372237083B00E18550 /* UIColor-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F362237083B00E18550 /* UIColor-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +40,8 @@
 /* Begin PBXFileReference section */
 		59982EF4223702E500E18550 /* RedditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59982EF7223702E500E18550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		59982EF9223702E500E18550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59982EFC223702E500E18550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		59982EFE223702E800E18550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59982EFE223702E800E18550 /* RTImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RTImages.xcassets; sourceTree = "<group>"; };
 		59982F01223702E800E18550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59982F03223702E800E18550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59982F08223702E800E18550 /* RedditTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +50,11 @@
 		59982F13223702E800E18550 /* RedditTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59982F17223702E800E18550 /* RedditTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTestUITests.swift; sourceTree = "<group>"; };
 		59982F19223702E800E18550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59982F2D223704A200E18550 /* RTMainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTMainSplitViewController.swift; sourceTree = "<group>"; };
+		59982F2F223704D500E18550 /* RTPostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostsListViewController.swift; sourceTree = "<group>"; };
+		59982F31223704E700E18550 /* RTDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDetailsViewController.swift; sourceTree = "<group>"; };
+		59982F33223707BF00E18550 /* RTColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RTColors.xcassets; sourceTree = "<group>"; };
+		59982F362237083B00E18550 /* UIColor-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +105,11 @@
 		59982EF6223702E500E18550 /* RedditTest */ = {
 			isa = PBXGroup;
 			children = (
+				59982F352237082700E18550 /* Extensions */,
+				59982F2A223703DD00E18550 /* Resources */,
+				59982F26223703AF00E18550 /* Screens */,
+				59982F252237039C00E18550 /* Storyboards */,
 				59982EF7223702E500E18550 /* AppDelegate.swift */,
-				59982EF9223702E500E18550 /* ViewController.swift */,
-				59982EFB223702E500E18550 /* Main.storyboard */,
-				59982EFE223702E800E18550 /* Assets.xcassets */,
-				59982F00223702E800E18550 /* LaunchScreen.storyboard */,
 				59982F03223702E800E18550 /* Info.plist */,
 			);
 			path = RedditTest;
@@ -123,6 +131,66 @@
 				59982F19223702E800E18550 /* Info.plist */,
 			);
 			path = RedditTestUITests;
+			sourceTree = "<group>";
+		};
+		59982F252237039C00E18550 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				59982EFB223702E500E18550 /* Main.storyboard */,
+				59982F00223702E800E18550 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		59982F26223703AF00E18550 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59982F29223703C900E18550 /* Main */,
+				59982F28223703BF00E18550 /* Details */,
+				59982F27223703B800E18550 /* PostsList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		59982F27223703B800E18550 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				59982F2F223704D500E18550 /* RTPostsListViewController.swift */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
+		59982F28223703BF00E18550 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				59982F31223704E700E18550 /* RTDetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		59982F29223703C900E18550 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				59982F2D223704A200E18550 /* RTMainSplitViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		59982F2A223703DD00E18550 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59982EFE223702E800E18550 /* RTImages.xcassets */,
+				59982F33223707BF00E18550 /* RTColors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		59982F352237082700E18550 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59982F362237083B00E18550 /* UIColor-extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +255,7 @@
 		59982EEC223702E500E18550 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RT;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Javier Manzo";
@@ -230,7 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				59982F02223702E800E18550 /* LaunchScreen.storyboard in Resources */,
-				59982EFF223702E800E18550 /* Assets.xcassets in Resources */,
+				59982F34223707BF00E18550 /* RTColors.xcassets in Resources */,
+				59982EFF223702E800E18550 /* RTImages.xcassets in Resources */,
 				59982EFD223702E500E18550 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59982EFA223702E500E18550 /* ViewController.swift in Sources */,
+				59982F30223704D500E18550 /* RTPostsListViewController.swift in Sources */,
 				59982EF8223702E500E18550 /* AppDelegate.swift in Sources */,
+				59982F2E223704A200E18550 /* RTMainSplitViewController.swift in Sources */,
+				59982F32223704E700E18550 /* RTDetailsViewController.swift in Sources */,
+				59982F372237083B00E18550 /* UIColor-extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
