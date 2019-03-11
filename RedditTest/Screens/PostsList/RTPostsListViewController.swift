@@ -12,9 +12,12 @@ class RTPostsListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
+    lazy private var presenter = RTPostsListPresenter(delegate: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
+        self.presenter.fetchPosts()
     }
     
     func setUpView() {
@@ -42,15 +45,15 @@ class RTPostsListViewController: UIViewController {
 
 extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return self.presenter.heightForRow()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter.numberOfRows()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.presenter.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,5 +63,19 @@ extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension RTPostsListViewController: RTPostsListPresenterDelegate {
+    func fetchStarted() {
+        
+    }
+    
+    func fetchEnded() {
+        self.tableView.reloadData()
+    }
+    
+    func fetchError(_ error: Error?) {
+        
     }
 }

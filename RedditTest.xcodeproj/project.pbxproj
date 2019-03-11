@@ -24,6 +24,12 @@
 		59982F4122370CE200E18550 /* RTPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F3F22370CE200E18550 /* RTPostTableViewCell.swift */; };
 		59982F4222370CE200E18550 /* RTPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59982F4022370CE200E18550 /* RTPostTableViewCell.xib */; };
 		59982F442237106900E18550 /* UIView-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F432237106900E18550 /* UIView-extension.swift */; };
+		59982F472237165E00E18550 /* RTPostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F462237165E00E18550 /* RTPostModels.swift */; };
+		59982F4A2237175400E18550 /* RTProjectConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F492237175400E18550 /* RTProjectConstans.swift */; };
+		59982F4D2237178800E18550 /* RTBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F4C2237178800E18550 /* RTBaseService.swift */; };
+		59982F4F223717EC00E18550 /* RTServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F4E223717EC00E18550 /* RTServices.swift */; };
+		59982F52223719DE00E18550 /* RTTopPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F51223719DE00E18550 /* RTTopPostsService.swift */; };
+		59982F5422371AF900E18550 /* RTPostsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F5322371AF900E18550 /* RTPostsListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,12 @@
 		59982F3F22370CE200E18550 /* RTPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostTableViewCell.swift; sourceTree = "<group>"; };
 		59982F4022370CE200E18550 /* RTPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTPostTableViewCell.xib; sourceTree = "<group>"; };
 		59982F432237106900E18550 /* UIView-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-extension.swift"; sourceTree = "<group>"; };
+		59982F462237165E00E18550 /* RTPostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostModels.swift; sourceTree = "<group>"; };
+		59982F492237175400E18550 /* RTProjectConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTProjectConstans.swift; sourceTree = "<group>"; };
+		59982F4C2237178800E18550 /* RTBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTBaseService.swift; sourceTree = "<group>"; };
+		59982F4E223717EC00E18550 /* RTServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTServices.swift; sourceTree = "<group>"; };
+		59982F51223719DE00E18550 /* RTTopPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTTopPostsService.swift; sourceTree = "<group>"; };
+		59982F5322371AF900E18550 /* RTPostsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostsListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +129,10 @@
 		59982EF6223702E500E18550 /* RedditTest */ = {
 			isa = PBXGroup;
 			children = (
+				59982F482237174400E18550 /* Constants */,
 				59982F352237082700E18550 /* Extensions */,
+				59982F452237163000E18550 /* Models */,
+				59982F4B2237176400E18550 /* Services */,
 				59982F2A223703DD00E18550 /* Resources */,
 				59982F26223703AF00E18550 /* Screens */,
 				59982F252237039C00E18550 /* Storyboards */,
@@ -169,6 +184,7 @@
 			children = (
 				59982F3E22370CC400E18550 /* Cell */,
 				59982F2F223704D500E18550 /* RTPostsListViewController.swift */,
+				59982F5322371AF900E18550 /* RTPostsListPresenter.swift */,
 			);
 			path = PostsList;
 			sourceTree = "<group>";
@@ -217,6 +233,40 @@
 				59982F4022370CE200E18550 /* RTPostTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		59982F452237163000E18550 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59982F462237165E00E18550 /* RTPostModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		59982F482237174400E18550 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				59982F492237175400E18550 /* RTProjectConstans.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		59982F4B2237176400E18550 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				59982F50223719CD00E18550 /* Core */,
+				59982F51223719DE00E18550 /* RTTopPostsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		59982F50223719CD00E18550 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				59982F4E223717EC00E18550 /* RTServices.swift */,
+				59982F4C2237178800E18550 /* RTBaseService.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,11 +407,17 @@
 				59982F30223704D500E18550 /* RTPostsListViewController.swift in Sources */,
 				59982EF8223702E500E18550 /* AppDelegate.swift in Sources */,
 				59982F2E223704A200E18550 /* RTMainSplitViewController.swift in Sources */,
+				59982F4A2237175400E18550 /* RTProjectConstans.swift in Sources */,
+				59982F4D2237178800E18550 /* RTBaseService.swift in Sources */,
 				59982F32223704E700E18550 /* RTDetailsViewController.swift in Sources */,
 				59982F3D22370BF200E18550 /* UITableViewCell-extension.swift in Sources */,
+				59982F5422371AF900E18550 /* RTPostsListPresenter.swift in Sources */,
+				59982F52223719DE00E18550 /* RTTopPostsService.swift in Sources */,
 				59982F442237106900E18550 /* UIView-extension.swift in Sources */,
+				59982F4F223717EC00E18550 /* RTServices.swift in Sources */,
 				59982F372237083B00E18550 /* UIColor-extension.swift in Sources */,
 				59982F3922370BAE00E18550 /* UITableView-extension.swift in Sources */,
+				59982F472237165E00E18550 /* RTPostModels.swift in Sources */,
 				59982F4122370CE200E18550 /* RTPostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +593,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RedditTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,6 +602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.javiermanzo.reddittest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,7 +612,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RedditTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,6 +621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.javiermanzo.reddittest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
