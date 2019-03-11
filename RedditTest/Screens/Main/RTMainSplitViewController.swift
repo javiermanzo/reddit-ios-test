@@ -9,7 +9,7 @@
 import UIKit
 
 class RTMainSplitViewController: UISplitViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -28,7 +28,6 @@ class RTMainSplitViewController: UISplitViewController {
             preferredDisplayMode = .primaryHidden
         }
     }
-
 }
 
 extension RTMainSplitViewController: UISplitViewControllerDelegate {

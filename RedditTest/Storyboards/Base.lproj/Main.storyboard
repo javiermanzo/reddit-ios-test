@@ -58,14 +58,29 @@
                     <view key="view" contentMode="scaleToFill" id="aVx-Gm-fWS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Feu-BL-Ldp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" name="one"/>
+                        <constraints>
+                            <constraint firstItem="Feu-BL-Ldp" firstAttribute="trailing" secondItem="5a9-FS-Sbp" secondAttribute="trailing" id="UET-dz-BO2"/>
+                            <constraint firstItem="Feu-BL-Ldp" firstAttribute="top" secondItem="5a9-FS-Sbp" secondAttribute="top" id="eX4-JC-3Yo"/>
+                            <constraint firstItem="Feu-BL-Ldp" firstAttribute="leading" secondItem="5a9-FS-Sbp" secondAttribute="leading" id="rzt-BD-SaA"/>
+                            <constraint firstItem="Feu-BL-Ldp" firstAttribute="bottom" secondItem="5a9-FS-Sbp" secondAttribute="bottom" id="ypv-Dd-Uhm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5a9-FS-Sbp"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ecv-GK-JOJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="Feu-BL-Ldp" id="XQi-dB-VoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1f-AT-H84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-1073"/>
+            <point key="canvasLocation" x="1712.8" y="-1073.6131934032985"/>
         </scene>
         <!--Main Split View Controller-->
         <scene sceneID="i7f-IZ-k3d">
