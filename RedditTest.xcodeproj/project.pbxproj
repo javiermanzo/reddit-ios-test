@@ -23,6 +23,7 @@
 		59982F3D22370BF200E18550 /* UITableViewCell-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F3C22370BF200E18550 /* UITableViewCell-extension.swift */; };
 		59982F4122370CE200E18550 /* RTPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F3F22370CE200E18550 /* RTPostTableViewCell.swift */; };
 		59982F4222370CE200E18550 /* RTPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59982F4022370CE200E18550 /* RTPostTableViewCell.xib */; };
+		59982F442237106900E18550 /* UIView-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F432237106900E18550 /* UIView-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		59982F3C22370BF200E18550 /* UITableViewCell-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell-extension.swift"; sourceTree = "<group>"; };
 		59982F3F22370CE200E18550 /* RTPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostTableViewCell.swift; sourceTree = "<group>"; };
 		59982F4022370CE200E18550 /* RTPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTPostTableViewCell.xib; sourceTree = "<group>"; };
+		59982F432237106900E18550 /* UIView-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				59982F362237083B00E18550 /* UIColor-extension.swift */,
 				59982F3822370BAE00E18550 /* UITableView-extension.swift */,
 				59982F3C22370BF200E18550 /* UITableViewCell-extension.swift */,
+				59982F432237106900E18550 /* UIView-extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				59982F2E223704A200E18550 /* RTMainSplitViewController.swift in Sources */,
 				59982F32223704E700E18550 /* RTDetailsViewController.swift in Sources */,
 				59982F3D22370BF200E18550 /* UITableViewCell-extension.swift in Sources */,
+				59982F442237106900E18550 /* UIView-extension.swift in Sources */,
 				59982F372237083B00E18550 /* UIColor-extension.swift in Sources */,
 				59982F3922370BAE00E18550 /* UITableView-extension.swift in Sources */,
 				59982F4122370CE200E18550 /* RTPostTableViewCell.swift in Sources */,

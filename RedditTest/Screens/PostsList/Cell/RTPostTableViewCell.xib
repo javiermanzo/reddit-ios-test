@@ -14,19 +14,116 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RTPostTableViewCell" customModule="RedditTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EY-9O-Rzt">
+                        <rect key="frame" x="16" y="11" width="15" height="15"/>
+                        <color key="backgroundColor" name="five"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="8Ir-cM-nFx"/>
+                            <constraint firstAttribute="height" constant="15" id="aVu-od-gWh"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3U-zU-XFg">
+                        <rect key="frame" x="16" y="119" width="128" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="128" id="FD8-Q6-hrE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="Dismiss Post" image="close">
+                            <color key="titleColor" name="two"/>
+                        </state>
+                        <connections>
+                            <action selector="dismissAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="55r-5C-axm"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGS-de-TrY">
+                        <rect key="frame" x="88" y="60.5" width="216" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="two"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_holder" translatesAutoresizingMaskIntoConstraints="NO" id="Jxk-Zc-Udv">
+                        <rect key="frame" x="16" y="37" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="CH8-iG-Uwk"/>
+                            <constraint firstAttribute="width" constant="64" id="XOL-Bc-hyb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTQ-0p-EJr">
+                        <rect key="frame" x="89" y="10" width="215" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="two"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWP-68-Scb">
+                        <rect key="frame" x="39" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="two"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Imv-dU-kel">
+                        <rect key="frame" x="160" y="120.5" width="144" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="four"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" name="one"/>
+                <constraints>
+                    <constraint firstItem="bWP-68-Scb" firstAttribute="leading" secondItem="6EY-9O-Rzt" secondAttribute="trailing" constant="8" id="0jc-Z9-8qf"/>
+                    <constraint firstItem="Imv-dU-kel" firstAttribute="centerY" secondItem="z3U-zU-XFg" secondAttribute="centerY" id="2qs-L1-a3C"/>
+                    <constraint firstItem="bWP-68-Scb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="48l-q6-6n9"/>
+                    <constraint firstItem="uGS-de-TrY" firstAttribute="leading" secondItem="Jxk-Zc-Udv" secondAttribute="trailing" constant="8" id="5to-UB-LlP"/>
+                    <constraint firstItem="oTQ-0p-EJr" firstAttribute="centerY" secondItem="bWP-68-Scb" secondAttribute="centerY" id="6tP-x4-BIm"/>
+                    <constraint firstItem="z3U-zU-XFg" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="B8p-7K-AcY"/>
+                    <constraint firstItem="Imv-dU-kel" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="G6w-xW-jnS"/>
+                    <constraint firstItem="z3U-zU-XFg" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="KRf-sQ-Iff"/>
+                    <constraint firstItem="oTQ-0p-EJr" firstAttribute="leading" secondItem="bWP-68-Scb" secondAttribute="trailing" constant="8" id="Swd-Af-yW9"/>
+                    <constraint firstItem="uGS-de-TrY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="VhB-HO-6mQ"/>
+                    <constraint firstItem="z3U-zU-XFg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="WnX-bS-NkK"/>
+                    <constraint firstAttribute="trailing" secondItem="oTQ-0p-EJr" secondAttribute="trailing" constant="16" id="bys-gF-JeU"/>
+                    <constraint firstItem="Jxk-Zc-Udv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nkK-We-o3v"/>
+                    <constraint firstItem="Jxk-Zc-Udv" firstAttribute="top" secondItem="bWP-68-Scb" secondAttribute="bottom" constant="8" id="oHt-n3-6z6"/>
+                    <constraint firstItem="z3U-zU-XFg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pO4-yJ-wla"/>
+                    <constraint firstItem="uGS-de-TrY" firstAttribute="centerY" secondItem="Jxk-Zc-Udv" secondAttribute="centerY" id="qeE-EL-pjF"/>
+                    <constraint firstItem="6EY-9O-Rzt" firstAttribute="centerY" secondItem="bWP-68-Scb" secondAttribute="centerY" id="tD3-1H-dgd"/>
+                    <constraint firstItem="6EY-9O-Rzt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tkS-aL-AOO"/>
+                    <constraint firstItem="Imv-dU-kel" firstAttribute="leading" secondItem="z3U-zU-XFg" secondAttribute="trailing" constant="16" id="vGj-Id-5Ni"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="bWP-68-Scb" id="kbR-jG-FKB"/>
+                <outlet property="commentsLabel" destination="Imv-dU-kel" id="NXY-Hb-G1F"/>
+                <outlet property="dismissButton" destination="z3U-zU-XFg" id="fgh-t2-7Ki"/>
+                <outlet property="readView" destination="6EY-9O-Rzt" id="7LG-QF-iEz"/>
+                <outlet property="thumbImageView" destination="Jxk-Zc-Udv" id="Vsk-Yq-qR3"/>
+                <outlet property="timeLabel" destination="oTQ-0p-EJr" id="Vsv-df-NlY"/>
+                <outlet property="titleLabel" destination="uGS-de-TrY" id="lOq-2z-Art"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="close" width="20" height="20"/>
+        <image name="image_holder" width="300" height="235"/>
+        <namedColor name="five">
+            <color red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="four">
+            <color red="0.75294117647058822" green="0.52941176470588236" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="one">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="two">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
