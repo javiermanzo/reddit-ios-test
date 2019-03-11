@@ -10,6 +10,11 @@ import UIKit
 
 class RTDetailsViewController: UIViewController {
 
+    @IBOutlet private var userLabel: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var postImageView: UIImageView!
+    @IBOutlet private var emptyStateView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

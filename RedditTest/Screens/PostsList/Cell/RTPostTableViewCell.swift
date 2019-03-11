@@ -10,13 +10,13 @@ import UIKit
 
 class RTPostTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var readView: UIView!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var thumbImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
-    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet private var readView: UIView!
+    @IBOutlet private var authorLabel: UILabel!
+    @IBOutlet private var timeLabel: UILabel!
+    @IBOutlet private var thumbImageView: UIImageView!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var commentsLabel: UILabel!
+    @IBOutlet private var dismissButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

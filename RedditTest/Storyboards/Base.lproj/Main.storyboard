@@ -11,21 +11,80 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Post-->
+        <!--Details View Controller-->
         <scene sceneID="Yfo-6Y-qAN">
             <objects>
                 <viewController storyboardIdentifier="RedditDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UzM-AU-yi9" customClass="RTDetailsViewController" customModule="RedditTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z9a-v6-jqK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrE-Xf-q05">
+                                <rect key="frame" x="16" y="80" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aut-oi-VEl">
+                                <rect key="frame" x="16" y="301" width="343" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c7J-rl-Ype">
+                                <rect key="frame" x="80" y="112" width="215" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="c7J-rl-Ype" secondAttribute="height" multiplier="14:11" id="QmU-qv-V5Y"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lR-ov-zgF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE8-gq-uA7">
+                                        <rect key="frame" x="96.5" y="270.5" width="182" height="62.5"/>
+                                        <string key="text">SELECT A POST
+FROM THE LIST</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="two"/>
+                                <constraints>
+                                    <constraint firstItem="QE8-gq-uA7" firstAttribute="centerX" secondItem="2lR-ov-zgF" secondAttribute="centerX" id="R3h-i2-RJc"/>
+                                    <constraint firstItem="QE8-gq-uA7" firstAttribute="centerY" secondItem="2lR-ov-zgF" secondAttribute="centerY" id="V4A-nC-442"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" name="two"/>
+                        <constraints>
+                            <constraint firstItem="hrE-Xf-q05" firstAttribute="top" secondItem="84H-3m-SfZ" secondAttribute="top" constant="16" id="4Yw-4n-NQq"/>
+                            <constraint firstItem="hrE-Xf-q05" firstAttribute="leading" secondItem="84H-3m-SfZ" secondAttribute="leading" constant="16" id="A1R-yr-v0O"/>
+                            <constraint firstItem="Aut-oi-VEl" firstAttribute="top" secondItem="c7J-rl-Ype" secondAttribute="bottom" constant="20" id="BSY-4q-qSh"/>
+                            <constraint firstItem="2lR-ov-zgF" firstAttribute="leading" secondItem="84H-3m-SfZ" secondAttribute="leading" id="Nmv-1j-Hfz"/>
+                            <constraint firstItem="2lR-ov-zgF" firstAttribute="trailing" secondItem="84H-3m-SfZ" secondAttribute="trailing" id="RUp-lH-S1y"/>
+                            <constraint firstItem="c7J-rl-Ype" firstAttribute="top" secondItem="hrE-Xf-q05" secondAttribute="bottom" constant="8" id="VYC-Br-uFJ"/>
+                            <constraint firstItem="c7J-rl-Ype" firstAttribute="leading" secondItem="84H-3m-SfZ" secondAttribute="leading" constant="80" id="XZi-fV-LXa"/>
+                            <constraint firstItem="84H-3m-SfZ" firstAttribute="trailing" secondItem="c7J-rl-Ype" secondAttribute="trailing" constant="80" id="aca-ru-0gx"/>
+                            <constraint firstItem="Aut-oi-VEl" firstAttribute="leading" secondItem="84H-3m-SfZ" secondAttribute="leading" constant="16" id="dLC-nX-yJo"/>
+                            <constraint firstItem="2lR-ov-zgF" firstAttribute="bottom" secondItem="84H-3m-SfZ" secondAttribute="bottom" id="fdc-na-zEI"/>
+                            <constraint firstItem="84H-3m-SfZ" firstAttribute="trailing" secondItem="hrE-Xf-q05" secondAttribute="trailing" constant="16" id="nEm-sq-fUv"/>
+                            <constraint firstItem="2lR-ov-zgF" firstAttribute="top" secondItem="84H-3m-SfZ" secondAttribute="top" id="ocB-Yb-5Us"/>
+                            <constraint firstItem="84H-3m-SfZ" firstAttribute="trailing" secondItem="Aut-oi-VEl" secondAttribute="trailing" constant="16" id="phv-L8-BSL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="84H-3m-SfZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="UXj-aQ-vVG"/>
+                    <navigationItem key="navigationItem" id="UXj-aQ-vVG"/>
+                    <connections>
+                        <outlet property="emptyStateView" destination="2lR-ov-zgF" id="26m-Jb-Aw4"/>
+                        <outlet property="postImageView" destination="c7J-rl-Ype" id="J2f-rF-WFT"/>
+                        <outlet property="titleLabel" destination="Aut-oi-VEl" id="A68-eQ-p0W"/>
+                        <outlet property="userLabel" destination="hrE-Xf-q05" id="wB1-ko-rDL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEV-a8-hE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-382"/>
+            <point key="canvasLocation" x="936.79999999999995" y="-382.75862068965517"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m9K-ab-7fU">
