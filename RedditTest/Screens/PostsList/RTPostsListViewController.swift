@@ -8,19 +8,13 @@
 
 import UIKit
 
-protocol RTPostsListDelegate {
-    func postselected(post: RTPost)
-}
-
 class RTPostsListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
     lazy private var presenter = RTPostsListPresenter(delegate: self)
     
-    var delegate: RTPostsListDelegate?
-    
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +22,12 @@ class RTPostsListViewController: UIViewController {
         self.presenter.fetchPosts()
     }
     
-    func setUpView() {
+    private func setUpView() {
         self.setUpNavigation()
         self.setUpTableView()
     }
     
-    func setUpNavigation() {
+    private func setUpNavigation() {
         self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.navigationBar.barTintColor = UIColor.style(.one)
         self.navigationController?.navigationBar.tintColor = UIColor.style(.three)
@@ -45,7 +39,7 @@ class RTPostsListViewController: UIViewController {
         self.title = "Reddit Posts"
     }
     
-    func setUpTableView() {
+    private func setUpTableView() {
         self.tableView.backgroundColor = UIColor.style(.one)
         self.tableView.clearExtraSeparators()
         self.tableView.registerCellNib(RTPostTableViewCell.self)
@@ -57,7 +51,7 @@ class RTPostsListViewController: UIViewController {
         self.tableView.dataSource = self
     }
     
-    @objc func dismissAll() {
+    @objc private func dismissAll() {
         if self.presenter.numberOfRows() > 0 {
             var indexPaths = [IndexPath]()
             for i in 0...(self.presenter.numberOfRows() - 1) {
@@ -72,7 +66,7 @@ class RTPostsListViewController: UIViewController {
         self.presenter.fetchPosts()
     }
     
-    func stopRefresh() {
+    private func stopRefresh() {
         DispatchQueue.main.async {
             self.self.refreshControl.endRefreshing()
         }
@@ -100,7 +94,10 @@ extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource 
         tableView.deselectRow(at: indexPath, animated: true)
         let post = self.presenter.selectPost(indexPath)
         tableView.reloadRows(at: [indexPath], with: .none)
-        self.delegate?.postselected(post: post)
+        
+        if let detailsController = RTDetailsViewController.instanceViewController(post: post) {
+            self.splitViewController?.showDetailViewController(detailsController, sender: self)
+        }
     }
 }
 

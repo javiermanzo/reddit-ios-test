@@ -57,7 +57,7 @@ class RTPostTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func dismissAction(_ sender: Any) {
+    @IBAction private func dismissAction(_ sender: Any) {
         if let post = self.post {
             self.delegate?.dismissPost(post: post)
         }

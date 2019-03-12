@@ -15,20 +15,32 @@ class RTDetailsViewController: UIViewController {
     @IBOutlet private var postImageView: UIImageView!
     @IBOutlet private var emptyStateView: UIView!
     
+    var post: RTPost?
+    
+    static func instanceViewController(post: RTPost) -> RTDetailsViewController? {
+        let storyboard = UIStoryboard(storyboard: .main)
+        let detailsController = storyboard.instantiateViewController(RTDetailsViewController.self)
+        detailsController?.post = post
+        return detailsController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Post"
         
         self.setUpImageView()
+        if let post = self.post {
+            self.setUpValues(post: post)
+        }
     }
     
-    func setUpImageView() {
+    private func setUpImageView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(gesture:)))
         self.postImageView.isUserInteractionEnabled = true
         self.postImageView.addGestureRecognizer(tap)
     }
     
-    func setUpValues(post: RTPost) {
+    private func setUpValues(post: RTPost) {
         self.authorLabel.text = post.data.author
         self.titleLabel.text = post.data.title
         
