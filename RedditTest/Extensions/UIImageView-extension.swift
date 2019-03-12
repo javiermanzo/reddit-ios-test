@@ -11,11 +11,15 @@ import UIKit
 extension UIImageView {
     private static let imageCache = NSCache<NSString, AnyObject>()
     
-    func loadImage(withUrl urlString : String, useCache cahe: Bool = true) {
+    func loadImage(withUrl urlString : String, useCache cahe: Bool = true, animated: Bool = false) {
         guard let url = URL(string: urlString) else { return }
         
         if cahe == true, let cachedImage = UIImageView.imageCache.object(forKey: urlString as NSString) as? UIImage {
-            self.setImageWithAnimation(image: cachedImage)
+            if animated {
+                self.setImageWithAnimation(image: cachedImage)
+            } else {
+                self.image = cachedImage
+            }
             return
         }
         
@@ -33,7 +37,11 @@ extension UIImageView {
                 }
                 
                 DispatchQueue.main.async {
-                    self.setImageWithAnimation(image: image)
+                    if animated {
+                        self.setImageWithAnimation(image: image)
+                    } else {
+                        self.image = image
+                    }
                 }
             }
         }).resume()

@@ -35,7 +35,7 @@ class RTDetailsViewController: UIViewController {
         if  let preview = post.data.preview, !preview.images.isEmpty {
             let image = preview.images[0].source
             let imageUrl = image.url.replacingOccurrences(of: "amp;", with: "")
-            self.postImageView.loadImage(withUrl: imageUrl)
+            self.postImageView.loadImage(withUrl: imageUrl, animated: true)
         }
         
         self.emptyStateView.isHidden = true
