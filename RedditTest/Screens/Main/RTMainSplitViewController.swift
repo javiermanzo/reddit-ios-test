@@ -17,9 +17,9 @@ class RTMainSplitViewController: UISplitViewController {
         super.viewDidLoad()
         self.delegate = self
         if UIApplication.shared.statusBarOrientation.isLandscape {
-            preferredDisplayMode = .allVisible
+            self.preferredDisplayMode = .allVisible
         } else {
-            preferredDisplayMode = .primaryHidden
+            self.preferredDisplayMode = .primaryHidden
         }
         
         let storyboard = UIStoryboard(storyboard: .main)
@@ -35,9 +35,9 @@ class RTMainSplitViewController: UISplitViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
-            preferredDisplayMode = .allVisible
+            self.preferredDisplayMode = .allVisible
         } else {
-            preferredDisplayMode = .primaryHidden
+            self.preferredDisplayMode = .primaryHidden
         }
     }
 }
@@ -51,6 +51,12 @@ extension RTMainSplitViewController: UISplitViewControllerDelegate {
 extension RTMainSplitViewController: RTPostsListDelegate {
     func postselected(post: RTPost) {
         guard let vc = self.detailsController else { return }
+        if UIDevice.current.orientation.isPortrait {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.preferredDisplayMode = .primaryHidden
+            }, completion: nil)
+        }
+        
         let _ = vc.view
         vc.setUpValues(post: post)
         

@@ -20,6 +20,8 @@ class RTPostsListViewController: UIViewController {
     
     var delegate: RTPostsListDelegate?
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -47,6 +49,10 @@ class RTPostsListViewController: UIViewController {
         self.tableView.backgroundColor = UIColor.style(.one)
         self.tableView.clearExtraSeparators()
         self.tableView.registerCellNib(RTPostTableViewCell.self)
+        
+        self.tableView.refreshControl = self.refreshControl
+        self.refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -59,6 +65,16 @@ class RTPostsListViewController: UIViewController {
             }
             self.presenter.dismissAllPosts()
             self.tableView.deleteRows(at: indexPaths, with: .left)
+        }
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        self.presenter.fetchPosts()
+    }
+    
+    func stopRefresh() {
+        DispatchQueue.main.async {
+            self.self.refreshControl.endRefreshing()
         }
     }
 }
@@ -90,15 +106,16 @@ extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension RTPostsListViewController: RTPostsListPresenterDelegate {
     func fetchStarted() {
-        
+        self.refreshControl.beginRefreshing()
     }
     
     func fetchEnded() {
+        self.stopRefresh()
         self.tableView.reloadData()
     }
     
     func fetchError(_ error: Error?) {
-        
+        self.stopRefresh()
     }
     
     func deleteCell(indexPath: IndexPath) {

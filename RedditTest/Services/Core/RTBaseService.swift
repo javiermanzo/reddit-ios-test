@@ -10,6 +10,8 @@ import UIKit
 
 class RTBaseService {
     
+    private init() {}
+    
     static func request<T: Codable>(model: T.Type, method: HTTPMethod, service: RTService, parameters: [String: String]? = nil, body: Data? = nil, headers: [String: String]? = nil, completion: @escaping (RTResult<T>)->()) {
         
         guard let request = self.buildRequest(service: service, method: method, parameters: parameters, body: body, headers: headers) else {
