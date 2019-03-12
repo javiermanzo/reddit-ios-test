@@ -44,6 +44,10 @@ class RTPostTableViewCell: UITableViewCell {
         self.titleLabel.text = post.data.title
         self.commentsLabel.text = "\(post.data.numberOfComments) comments"
         self.readView.isHidden = post.data.readed
+        
+        if let urlString = post.data.thumbImageUrl {
+            self.thumbImageView.loadImage(withUrl: urlString)
+        }
     }
     
     @IBAction func dismissAction(_ sender: Any) {

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RTPostsListDelegate {
-    func postselected(_ post: RTPost)
+    func postselected(post: RTPost)
 }
 
 class RTPostsListViewController: UIViewController {
@@ -70,7 +70,7 @@ extension RTPostsListViewController: UITableViewDelegate, UITableViewDataSource 
         tableView.deselectRow(at: indexPath, animated: true)
         let post = self.presenter.selectPost(indexPath)
         tableView.reloadRows(at: [indexPath], with: .none)
-        self.delegate?.postselected(post)
+        self.delegate?.postselected(post: post)
     }
 }
 

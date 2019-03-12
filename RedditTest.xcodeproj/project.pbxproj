@@ -31,6 +31,9 @@
 		59982F52223719DE00E18550 /* RTTopPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F51223719DE00E18550 /* RTTopPostsService.swift */; };
 		59982F5422371AF900E18550 /* RTPostsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F5322371AF900E18550 /* RTPostsListPresenter.swift */; };
 		59982F562237249800E18550 /* Date-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F552237249800E18550 /* Date-extension.swift */; };
+		59982F582237278D00E18550 /* UIImageView-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F572237278D00E18550 /* UIImageView-extension.swift */; };
+		59982F5A22372BE800E18550 /* UIStoryboard-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F5922372BE800E18550 /* UIStoryboard-extension.swift */; };
+		59982F5C22372C1400E18550 /* UIViewController-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59982F5B22372C1400E18550 /* UIViewController-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		59982F51223719DE00E18550 /* RTTopPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTTopPostsService.swift; sourceTree = "<group>"; };
 		59982F5322371AF900E18550 /* RTPostsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTPostsListPresenter.swift; sourceTree = "<group>"; };
 		59982F552237249800E18550 /* Date-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-extension.swift"; sourceTree = "<group>"; };
+		59982F572237278D00E18550 /* UIImageView-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView-extension.swift"; sourceTree = "<group>"; };
+		59982F5922372BE800E18550 /* UIStoryboard-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard-extension.swift"; sourceTree = "<group>"; };
+		59982F5B22372C1400E18550 /* UIViewController-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,9 @@
 				59982F3C22370BF200E18550 /* UITableViewCell-extension.swift */,
 				59982F432237106900E18550 /* UIView-extension.swift */,
 				59982F552237249800E18550 /* Date-extension.swift */,
+				59982F572237278D00E18550 /* UIImageView-extension.swift */,
+				59982F5922372BE800E18550 /* UIStoryboard-extension.swift */,
+				59982F5B22372C1400E18550 /* UIViewController-extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -421,7 +430,10 @@
 				59982F4F223717EC00E18550 /* RTServices.swift in Sources */,
 				59982F372237083B00E18550 /* UIColor-extension.swift in Sources */,
 				59982F3922370BAE00E18550 /* UITableView-extension.swift in Sources */,
+				59982F5A22372BE800E18550 /* UIStoryboard-extension.swift in Sources */,
+				59982F5C22372C1400E18550 /* UIViewController-extension.swift in Sources */,
 				59982F472237165E00E18550 /* RTPostModels.swift in Sources */,
+				59982F582237278D00E18550 /* UIImageView-extension.swift in Sources */,
 				59982F4122370CE200E18550 /* RTPostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

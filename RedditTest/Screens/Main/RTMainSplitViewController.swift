@@ -10,6 +10,9 @@ import UIKit
 
 class RTMainSplitViewController: UISplitViewController {
     
+    var postsListController: RTPostsListViewController?
+    var detailsController: RTDetailsViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -17,6 +20,15 @@ class RTMainSplitViewController: UISplitViewController {
             preferredDisplayMode = .allVisible
         } else {
             preferredDisplayMode = .primaryHidden
+        }
+        
+        let storyboard = UIStoryboard(storyboard: .main)
+        self.detailsController = storyboard.instantiateViewController(RTDetailsViewController.self)
+        
+        if let leftNavController = self.viewControllers.first as? UINavigationController,
+            let masterViewController = leftNavController.topViewController as? RTPostsListViewController {
+            self.postsListController = masterViewController
+            self.postsListController?.delegate = self
         }
     }
     
@@ -33,5 +45,15 @@ class RTMainSplitViewController: UISplitViewController {
 extension RTMainSplitViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+}
+
+extension RTMainSplitViewController: RTPostsListDelegate {
+    func postselected(post: RTPost) {
+        guard let vc = self.detailsController else { return }
+        let _ = vc.view
+        vc.setUpValues(post: post)
+        
+        self.showDetailViewController(vc, sender: self)
     }
 }
