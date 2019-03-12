@@ -18,9 +18,9 @@ extension UIStoryboard {
         self.init(name: storyboard.rawValue, bundle: bundle)
     }
     
-    func instantiateViewController<T: UIViewController>(_: T.Type) -> T {
+    func instantiateViewController<T: UIViewController>(_: T.Type) -> T? {
         guard let viewController = self.instantiateViewController(withIdentifier: T.reusableIdentifier) as? T else {
-            fatalError("Couldn't instantiate view controller with identifier \(T.reusableIdentifier) ")
+            return nil
         }
         return viewController
     }
