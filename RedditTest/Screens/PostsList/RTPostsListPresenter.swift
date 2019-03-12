@@ -12,6 +12,7 @@ protocol RTPostsListPresenterDelegate {
     func fetchStarted()
     func fetchEnded()
     func fetchError(_ error: Error?)
+    func deleteCell(indexPath: IndexPath)
 }
 
 class RTPostsListPresenter {
@@ -56,7 +57,7 @@ class RTPostsListPresenter {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(RTPostTableViewCell.self) else { return UITableViewCell() }
         let post = self.posts[indexPath.row]
-        cell.setUpValues(post: post)
+        cell.setUpValues(post: post, delegate: self)
         return cell
     }
     
@@ -64,5 +65,24 @@ class RTPostsListPresenter {
         let post = self.posts[indexPath.row]
         post.data.readed = true
         return post
+    }
+    
+    func dismissPost(indexPath: IndexPath) {
+        self.posts.remove(at: indexPath.row)
+    }
+    
+    func dismissAllPosts() {
+        self.posts.removeAll()
+    }
+}
+
+extension RTPostsListPresenter: RTPostCellDelegate {
+    func dismissPost(post: RTPost) {
+        if self.posts.contains(post),
+            let index = self.posts.index(of: post) {
+            self.posts.remove(at: index)
+            let indexPath = IndexPath(row: index, section: 0)
+            self.delegate?.deleteCell(indexPath: indexPath)
+        }
     }
 }

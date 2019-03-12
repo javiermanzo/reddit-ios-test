@@ -8,8 +8,12 @@
 
 import UIKit
 
-class RTPostTableViewCell: UITableViewCell {
+protocol RTPostCellDelegate {
+    func dismissPost(post: RTPost)
+}
 
+class RTPostTableViewCell: UITableViewCell {
+    
     @IBOutlet private var readView: UIView!
     @IBOutlet private var authorLabel: UILabel!
     @IBOutlet private var timeLabel: UILabel!
@@ -19,6 +23,8 @@ class RTPostTableViewCell: UITableViewCell {
     @IBOutlet private var dismissButton: UIButton!
     
     var post: RTPost?
+    
+    var delegate: RTPostCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,8 +43,9 @@ class RTPostTableViewCell: UITableViewCell {
         self.readView.circleView()
     }
     
-    func setUpValues(post: RTPost) {
+    func setUpValues(post: RTPost, delegate: RTPostCellDelegate) {
         self.post = post
+        self.delegate = delegate
         self.authorLabel.text = post.data.author
         self.timeLabel.text = Date(timeIntervalSince1970: post.data.creationDateTimestamp).timeAgoSinceDate(numericDates: true)
         self.titleLabel.text = post.data.title
@@ -51,6 +58,8 @@ class RTPostTableViewCell: UITableViewCell {
     }
     
     @IBAction func dismissAction(_ sender: Any) {
-        
+        if let post = self.post {
+            self.delegate?.dismissPost(post: post)
+        }
     }
 }

@@ -37,6 +37,9 @@ class RTPostsListViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.style(.three)
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.style(.two)]
         
+        let item = UIBarButtonItem(title: "Dismiss all", style: .done, target: self, action: #selector(self.dismissAll))
+        self.navigationItem.rightBarButtonItem = item
+        
         self.title = "Reddit Posts"
     }
     
@@ -46,6 +49,17 @@ class RTPostsListViewController: UIViewController {
         self.tableView.registerCellNib(RTPostTableViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    @objc func dismissAll() {
+        if self.presenter.numberOfRows() > 0 {
+            var indexPaths = [IndexPath]()
+            for i in 0...(self.presenter.numberOfRows() - 1) {
+                indexPaths.append(IndexPath(row: i, section: 0))
+            }
+            self.presenter.dismissAllPosts()
+            self.tableView.deleteRows(at: indexPaths, with: .left)
+        }
     }
 }
 
@@ -85,5 +99,9 @@ extension RTPostsListViewController: RTPostsListPresenterDelegate {
     
     func fetchError(_ error: Error?) {
         
+    }
+    
+    func deleteCell(indexPath: IndexPath) {
+        self.tableView.deleteRows(at: [indexPath], with: .left)
     }
 }
