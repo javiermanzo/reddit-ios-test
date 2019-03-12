@@ -13,12 +13,13 @@ extension UIImageView {
     
     func loadImage(withUrl urlString : String, useCache cahe: Bool = true) {
         guard let url = URL(string: urlString) else { return }
-        self.image = UIImage(named: "image_holder")
         
         if cahe == true, let cachedImage = UIImageView.imageCache.object(forKey: urlString as NSString) as? UIImage {
-            self.image = cachedImage
+            self.setImageWithAnimation(image: cachedImage)
             return
         }
+        
+        self.image = UIImage(named: "image_holder")
         
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
@@ -32,9 +33,21 @@ extension UIImageView {
                 }
                 
                 DispatchQueue.main.async {
-                    self.image = image
+                    self.setImageWithAnimation(image: image)
                 }
             }
         }).resume()
+    }
+    
+    func savePhotoInGallery() {
+        DispatchQueue.main.async {
+            if let image = self.image {
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
+        }
+    }
+    
+    func setImageWithAnimation(image: UIImage, animationDuration: Double = 0.3) {
+        UIView.transition(with: self, duration: animationDuration, options: .transitionCrossDissolve, animations: { self.image = image }, completion: nil)
     }
 }

@@ -18,6 +18,14 @@ class RTDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Post"
+        
+        self.setUpImageView()
+    }
+    
+    func setUpImageView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(gesture:)))
+        self.postImageView.isUserInteractionEnabled = true
+        self.postImageView.addGestureRecognizer(tap)
     }
     
     func setUpValues(post: RTPost) {
@@ -31,5 +39,15 @@ class RTDetailsViewController: UIViewController {
         }
         
         self.emptyStateView.isHidden = true
+    }
+    
+    @objc private func imageTapped(gesture: UITapGestureRecognizer) {
+        RTPermissions.getGalleryPermission { (granted) in
+            if granted {
+                self.postImageView.savePhotoInGallery()
+            } else {
+                RTPermissions.openAppSettings()
+            }
+        }
     }
 }
