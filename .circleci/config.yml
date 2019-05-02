@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build-and-test:
     macos:
-      xcode: "10.2"
+      xcode: "10.2.0"
 
     steps:
       - checkout
