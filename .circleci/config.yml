@@ -1,15 +1,59 @@
 # Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
 
-# Use a package of configuration called an orb, see https://circleci.com/docs/2.0/orb-intro/
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.3.1
+jobs:
+  build-and-test:
+    macos:
+      xcode: "10.2"
 
-# Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
+    steps:
+      - checkout
+      - run:
+          name: Fetch CocoaPods Specs
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      # - run:
+      #     name: Install CocoaPods
+      #     command: pod install --verbose
+
+      - run:
+          name: Build and run tests
+          command: fastlane scan
+          environment:
+            SCAN_DEVICE: iPhone 8
+            SCAN_SCHEME: WebTests
+
+      - store_test_results:
+          path: test_output/report.xml
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: scan-test-results
+      - store_artifacts:
+          path: ~/Library/Logs/scan
+          destination: scan-logs
+
+  # swiftlint:
+  #   docker:
+  #     - image: dantoml/swiftlint:latest
+  #   steps:
+  #     - checkout
+  #     - run: swiftlint lint --reporter junit | tee result.xml
+  #     - store_artifacts:
+  #         path: result.xml
+  #     - store_test_results:
+  #         path: result.xml
+
+  # danger:
+  #   docker:
+  #     - image: dantoml/danger:latest
+  #   steps:
+  #     - checkout
+  #     - run: danger
+
 workflows:
-  # Name the workflow "Welcome"
-  Welcome:
-    # Run the welcome/run job in its own container
+  version: 2
+  build-test-lint:
     jobs:
-      - welcome/run
+      # - swiftlint
+      # - danger
+      - build-and-test
